@@ -5,11 +5,13 @@
 #include <QPushButton>
 #include <QGridLayout>
 #include <QLineEdit>
+#include <QTextEdit>
 #include <QLabel>
 #include <QTextStream>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QDir>
 
 
 class MainWindow : public QDialog
@@ -18,7 +20,6 @@ class MainWindow : public QDialog
 
 public:
     MainWindow(QWidget *parent = 0);
-//    ~MainWindow();
 
 private:
     QLabel *lbl;
@@ -28,10 +29,12 @@ private:
     QPushButton *ok;
     QPushButton *quit;
 
+    QTextEdit *text;
 private slots:
     void OkClicked();
     void TextChanged(QString str);
     void Open();
+    void start(const QDir& dir);
 };
 
 #endif // MAINWINDOW_H
