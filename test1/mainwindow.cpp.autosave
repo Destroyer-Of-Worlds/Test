@@ -119,9 +119,7 @@ void MainWindow::OkClicked()
         table->setItem(fileGroups.keys().size(),1, itmAvg);
         table->setItem(fileGroups.keys().size(),2, itmGen);
         text->append("Path: "+dir->absolutePath());
-        text->append("Subdirs count: "+QString::number(dir->entryList(QDir::AllDirs).count()));
-        foreach(QString str, dir->entryList(QDir::AllDirs))
-            text->append(str);
+        text->append("Subdirs count: "+QString::number(dir->entryList(QDir::AllDirs).count()-2)); //excluding "." and ".."
 
     }
 
